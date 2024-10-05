@@ -77,7 +77,7 @@ interface SocketAdapter {
  * Object Adapter - This form uses Java Composition and adapter contains the source object.
  */
 
-class SocketClassAdapterImpl extends Socket implements SocketAdapter{
+class SocketClassAdapterImpl extends Socket implements SocketAdapter {
 
     @Override
     public Volt get120Volt() {

@@ -77,6 +77,7 @@ class UserImpl extends User {
         System.out.println(this.name+": Sending Message="+msg);
         mediator.sendMessage(msg, this);
     }
+
     @Override
     public void receive(String msg) {
         System.out.println(this.name+": Received Message:"+msg);
