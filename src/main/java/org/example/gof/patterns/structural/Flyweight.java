@@ -3,8 +3,6 @@ package org.example.gof.patterns.structural;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 public class Flyweight {
@@ -115,14 +113,12 @@ class DrawingClient extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
-        startButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
-                Graphics g = panel.getGraphics();
-                for (int i = 0; i < 20; ++i) {
-                    FlyWeightShape shape = ShapeFactory.getShape(getRandomShape());
-                    shape.draw(g, getRandomX(), getRandomY(), getRandomWidth(),
-                            getRandomHeight(), getRandomColor());
-                }
+        startButton.addActionListener(event -> {
+            Graphics g = panel.getGraphics();
+            for (int i = 0; i < 20; ++i) {
+                FlyWeightShape shape = ShapeFactory.getShape(getRandomShape());
+                shape.draw(g, getRandomX(), getRandomY(), getRandomWidth(),
+                        getRandomHeight(), getRandomColor());
             }
         });
     }
